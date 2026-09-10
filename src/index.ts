@@ -1,0 +1,8 @@
+export { landingContent } from './modules/landing/book/landing-book';
+export { navbarContent } from './shared/book/shared-navbar-book';
+export { footerContent } from './shared/book/shared-footer-book';
+
+export { default as Home } from './modules/landing/pages/Home';
+export { default as Navbar } from './shared/layouts/Navbar';
+export { default as Footer } from './shared/layouts/Footer';
+export { default as Layout } from './shared/layouts/Layout';
