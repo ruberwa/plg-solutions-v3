@@ -1,12 +1,16 @@
 import { Outlet } from 'react-router-dom'
 import Footer from './Footer'
 import Navbar from './Navbar'
+import { usePlgEffects, useScrollToHash } from '../hooks/usePlgEffects'
 
 const Layout = () => {
+  usePlgEffects()
+  useScrollToHash()
+
   return (
-    <div className="flex flex-col min-h-screen bg-gray-50">
+    <div>
       <Navbar />
-      <main className="flex-grow">
+      <main>
         <Outlet />
       </main>
       <Footer />

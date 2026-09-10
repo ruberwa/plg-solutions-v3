@@ -1,0 +1,112 @@
+export const capabilitiesContent = {
+  meta: {
+    title: 'Capabilities | PLG Solutions',
+    description: 'PLG Solutions builds and operates national digital infrastructure across Africa — identity, data exchange and registries for governments, regulators and industry.',
+  },
+  hero: {
+    eyebrow: 'What we do',
+    title: 'We build the platforms institutions share.',
+    lede: 'PLG Solutions designs, builds and operates digital infrastructure used by many organisations at once — the identity, data and service layers that governments, regulators and industry depend on. We build in Rwanda, for the continent.',
+    statusLabel: 'SYSTEM VIEW',
+    statusValue: 'CONNECTED / OBSERVABLE / RESILIENT',
+    video: 'https://videos.pexels.com/video-files/6913276/6913276-uhd_3840_2160_25fps.mp4',
+  },
+  intro: {
+    eyebrow: 'Shared digital infrastructure',
+    title: 'National platforms',
+    lede: 'Infrastructure built once, used by everyone who needs it.',
+  },
+  platforms: [
+    {
+      id: 'identity',
+      num: '01',
+      title: 'Identity & verification',
+      body: 'Verification infrastructure that lets banks, telecoms and government agencies confirm identity once, securely and with consent, instead of each rebuilding the same process.',
+      visual: 'identity',
+    },
+    {
+      id: 'data-exchange',
+      num: '02',
+      title: 'Institutional data exchange',
+      body: 'Governed data sharing between institutions, with consent, audit and access control built into the architecture rather than added later.',
+      visual: 'exchange',
+    },
+    {
+      id: 'registries',
+      num: '03',
+      title: 'Registries & records',
+      body: 'Authoritative records that other systems can rely on, designed for the volumes and availability requirements of national use.',
+      visual: 'registry',
+    },
+    {
+      id: 'trade',
+      num: '04',
+      title: 'Border & trade systems',
+      body: 'Integrated screening, inspection and clearance infrastructure across inland and border points.',
+      visual: 'border',
+    },
+  ],
+  support: {
+    eyebrow: 'Supporting layers',
+    title: 'What it takes to run at national scale',
+    lede: 'Platforms this size succeed on the layers underneath them.',
+    items: [
+      {
+        id: 'integration',
+        index: '01',
+        title: 'Systems integration',
+        body: 'Connecting existing platforms, devices and data sources so information moves reliably between institutions that have never shared it before.',
+        tags: ['Enterprise integration', 'API & middleware', 'Device / IoT integration', 'Identity integration', 'Legacy interfaces', 'Operational monitoring'],
+      },
+      {
+        id: 'data',
+        index: '02',
+        title: 'Data & intelligence',
+        body: 'Turning distributed data into dashboards, analytics and automation that supervisors, analysts and frontline teams actually use.',
+        tags: ['Data platforms', 'Dashboards & reporting', 'Analytics', 'Automation', 'Data integration', 'Decision support'],
+        status: { label: 'OPERATIONS', value: 'MONITORED' },
+      },
+      {
+        id: 'infrastructure',
+        index: '03',
+        title: 'Infrastructure & continuity',
+        body: 'Cloud, hybrid and on-premise environments designed for availability, observability and recovery, including hosting inside national data centres.',
+        tags: ['Cloud architecture', 'Hybrid environments', 'Platform engineering', 'Monitoring', 'Resilience planning', 'Operational support'],
+      },
+      {
+        id: 'security',
+        index: '04',
+        title: 'Security & resilience',
+        body: 'Security architecture aligned to regulatory requirements and operational risk, designed in from the start.',
+        tags: ['Security architecture', 'Identity & access', 'Secure configuration', 'Resilience design', 'Risk-informed controls', 'Operational readiness'],
+      },
+    ],
+  },
+  delivery: {
+    eyebrow: 'Delivery & operation',
+    title: "We don't hand over and leave.",
+    lede: 'Most national platforms stall on mandate, pricing and ownership rather than on engineering. We work on all of it, and we stay for the operating life of the system.',
+    stages: [
+      { index: '01', title: 'Structure', body: 'Design, commercial model, pricing methodology and the regulatory arrangements that make adoption work.' },
+      { index: '02', title: 'Define', body: 'Requirements, architecture and the operating model for the platform.' },
+      { index: '03', title: 'Build', body: 'Engineering and integration with the institutions that will connect.' },
+      { index: '04', title: 'Deploy', body: 'Rollout, onboarding, change and adoption across participating organisations.' },
+      { index: '05', title: 'Operate', body: 'Long-term operation, support and evolution under partnership and concession models.' },
+    ],
+    strip: 'STRUCTURE / DEFINE / BUILD / DEPLOY / OPERATE',
+  },
+  africa: {
+    eyebrow: 'Built from here',
+    title: 'Built in Kigali. Designed for the continent.',
+    lede: 'Institutions across Africa face the same problems in a different order — fragmented identity systems, records that can\'t be verified across borders, services that stop at the edge of one agency. We build platforms designed from the outset to be redeployed in a second market and to interoperate across them.',
+    points: [
+      { index: '01', title: 'Replicable', body: 'Architecture and commercial models built to be redeployed in another market, not rebuilt from scratch.' },
+      { index: '02', title: 'Interoperable', body: 'Designed to standards that let platforms in different countries recognise one another.' },
+      { index: '03', title: 'African-owned', body: 'We take long-term ownership positions in the infrastructure we build, from the continent rather than into it.' },
+    ],
+  },
+  cta: {
+    title: 'Building something at national scale?',
+    body: 'Tell us what you are scoping, structuring or procuring, and we will tell you honestly whether we are the right partner for it.',
+  },
+}

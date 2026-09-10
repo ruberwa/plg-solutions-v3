@@ -1,8 +1,12 @@
-export { landingContent } from './modules/landing/book/landing-book';
-export { navbarContent } from './shared/book/shared-navbar-book';
-export { footerContent } from './shared/book/shared-footer-book';
+export { landingContent } from './modules/landing/book/landing-book'
+export { navbarContent } from './shared/book/shared-navbar-book'
+export { footerContent } from './shared/book/shared-footer-book'
 
-export { default as Home } from './modules/landing/pages/Home';
-export { default as Navbar } from './shared/layouts/Navbar';
-export { default as Footer } from './shared/layouts/Footer';
-export { default as Layout } from './shared/layouts/Layout';
+export { default as Home } from './modules/landing/pages/Home'
+export { default as Capabilities } from './modules/capabilities/pages/Capabilities'
+export { default as Industries } from './modules/industries/pages/Industries'
+export { default as About } from './modules/about/pages/About'
+export { default as Contact } from './modules/contact/pages/Contact'
+export { default as Navbar } from './shared/layouts/Navbar'
+export { default as Footer } from './shared/layouts/Footer'
+export { default as Layout } from './shared/layouts/Layout'
