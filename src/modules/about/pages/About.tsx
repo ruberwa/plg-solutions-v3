@@ -3,7 +3,7 @@ import { usePageMeta } from '../../../shared/hooks/usePlgEffects'
 import LocationsMap from '../../../shared/components/LocationsMap'
 
 const About = () => {
-  const { hero, statement, origin, mission, vision, values, partners, where, meta } = aboutContent
+  const { hero, mission, vision, values, partners, where, meta } = aboutContent
   usePageMeta(meta.title, meta.description)
 
   return (
@@ -20,17 +20,6 @@ const About = () => {
           <span className="eyebrow eyebrow-light">{hero.eyebrow}</span>
           <h1>{hero.title}</h1>
           <p>{hero.lede}</p>
-        </div>
-      </section>
-      <section className="section about-intro">
-        <div className="container container-ultra">
-          <div className="about-intro-grid reveal">
-            <p className="statement">{statement}</p>
-            <div className="about-origin">
-              <span className="eyebrow">{origin.eyebrow}</span>
-              <p>{origin.body}</p>
-            </div>
-          </div>
         </div>
       </section>
       <section className="section soft">

@@ -6,12 +6,7 @@ export const aboutContent = {
   hero: {
     eyebrow: 'About PLG Solutions',
     title: 'We build national infrastructure, and we stay to run it.',
-    lede: 'PLG Solutions designs, structures, finances and operates the digital platforms that institutions depend on. We are headquartered in Kigali and part of Parklane Group, whose interests span real estate, energy and mining, security and technology.',
-  },
-  statement: 'That backing lets us take ownership positions in the infrastructure we build, on the timelines this work actually requires.',
-  origin: {
-    eyebrow: 'Kigali, Rwanda',
-    body: 'Built from the continent, for institutions that need infrastructure to remain dependable long after launch.',
+    lede: 'PLG Solutions designs, structures, finances and operates the digital platforms that institutions depend on.',
   },
   mission: {
     title: 'Build the digital infrastructure African institutions own.',
