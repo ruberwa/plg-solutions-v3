@@ -1,6 +1,6 @@
 import { aboutContent } from '../book/about-book'
-import { PageHero } from '../../../shared/components/SiteBlocks'
 import { usePageMeta } from '../../../shared/hooks/usePlgEffects'
+import LocationsMap from '../../../shared/components/LocationsMap'
 
 const About = () => {
   const { hero, statement, origin, mission, vision, values, partners, where, meta } = aboutContent
@@ -8,7 +8,20 @@ const About = () => {
 
   return (
     <>
-      <PageHero eyebrow={hero.eyebrow} title={hero.title} lede={hero.lede} />
+      <section className="about-hero">
+        <div className="about-hero-world" aria-hidden="true">
+          <div className="about-hero-sphere">
+            <div className="cap-hero-globe-texture" />
+            <div className="cap-hero-globe-gridlines" />
+          </div>
+          <canvas data-about-globe="" />
+        </div>
+        <div className="container container-ultra about-hero-copy">
+          <span className="eyebrow eyebrow-light">{hero.eyebrow}</span>
+          <h1>{hero.title}</h1>
+          <p>{hero.lede}</p>
+        </div>
+      </section>
       <section className="section about-intro">
         <div className="container container-ultra">
           <div className="about-intro-grid reveal">
@@ -69,13 +82,10 @@ const About = () => {
       </section>
       <section className="section where-operate-section">
         <div className="container container-ultra">
-          <div className="where-operate-card reveal">
+          <div className="where-operate-content reveal">
             <span className="eyebrow">{where.eyebrow}</span>
             <h2>{where.title}</h2>
-            <div aria-hidden="true" className="where-operate-map">
-              <span>KIGALI</span>
-              <i></i><i></i><i></i>
-            </div>
+            <LocationsMap />
           </div>
         </div>
       </section>

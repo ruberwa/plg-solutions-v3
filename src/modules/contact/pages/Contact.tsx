@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { contactContent } from '../book/contact-book'
 import { PageHero } from '../../../shared/components/SiteBlocks'
 import { usePageMeta } from '../../../shared/hooks/usePlgEffects'
+import LocationsMap from '../../../shared/components/LocationsMap'
 
 const encodeForm = (form: HTMLFormElement) => {
   const params = new URLSearchParams()
@@ -146,6 +147,14 @@ const Contact = () => {
             <div className={`form-success${status === 'success' ? ' is-visible' : ''}`} role="status">{form.success}</div>
             <div className={`form-error${status === 'error' ? ' is-visible' : ''}`} role="alert">{form.error}</div>
           </form>
+        </div>
+      </section>
+      <section className="section soft contact-map-section">
+        <div className="container container-ultra">
+          <div className="section-head">
+            <h2>{info.locationLabel}</h2>
+          </div>
+          <LocationsMap />
         </div>
       </section>
     </>

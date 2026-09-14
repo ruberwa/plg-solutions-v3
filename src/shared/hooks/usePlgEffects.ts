@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom'
 const prefersReducedMotion = () =>
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-function setupGlobe(canvas: HTMLCanvasElement, opts: { cx?: number; cy?: number; scale?: number } = {}) {
+function setupGlobe(canvas: HTMLCanvasElement, opts: { cx?: number; cy?: number; scale?: number; offices?: boolean } = {}) {
   const ctx = canvas.getContext('2d')
   if (!ctx) return () => undefined
 
@@ -14,11 +14,11 @@ function setupGlobe(canvas: HTMLCanvasElement, opts: { cx?: number; cy?: number;
   let dpr = 1
   let t = 0
   let raf = 0
-  const cities = [
+  const cities = (opts.offices ? [[30.0619, -1.9441], [3.3792, 6.5244], [55.2708, 25.2048]] : [
     [-0.12, 51.5], [31.24, 30.0], [55.27, 25.2], [77.2, 28.6], [103.8, 1.35],
     [116.4, 39.9], [139.7, 35.7], [-74.0, 40.7], [-122.4, 37.8], [-46.6, -23.5],
     [18.4, -33.9], [151.2, -33.9], [28.0, -26.2],
-  ].map(([lon, lat]) => ({ lon: lon * Math.PI / 180, lat: lat * Math.PI / 180 }))
+  ]).map(([lon, lat]) => ({ lon: lon * Math.PI / 180, lat: lat * Math.PI / 180 }))
 
   const resize = () => {
     const r = canvas.getBoundingClientRect()
@@ -92,7 +92,7 @@ function setupGlobe(canvas: HTMLCanvasElement, opts: { cx?: number; cy?: number;
     ctx.stroke()
     lineSphere(t, cx, cy, R)
     const pts = cities.map((c) => project(c.lon, c.lat, t, cx, cy, R))
-    const edges: Array<[number, number]> = [
+    const edges: Array<[number, number]> = opts.offices ? [[0, 1], [0, 2], [1, 2]] : [
       [0, 2], [0, 7], [2, 3], [3, 4], [4, 5], [4, 12], [5, 6], [7, 8], [7, 9], [2, 10], [4, 11], [10, 12], [9, 10],
     ]
     edges.forEach(([a, b], idx) => {
@@ -241,6 +241,9 @@ export function usePlgEffects() {
 
     document.querySelectorAll<HTMLCanvasElement>('[data-service-globe]').forEach((canvas) => {
       cleanups.push(setupGlobe(canvas, { cx: 0.5, cy: 0.5, scale: 0.44 }))
+    })
+    document.querySelectorAll<HTMLCanvasElement>('[data-about-globe]').forEach((canvas) => {
+      cleanups.push(setupGlobe(canvas, { cx: 0.5, cy: 0.5, scale: 0.44, offices: true }))
     })
     document.querySelectorAll<HTMLCanvasElement>('[data-network-map]').forEach((canvas, i) => {
       cleanups.push(setupMap(canvas, i + 1))
