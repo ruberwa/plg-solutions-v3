@@ -116,7 +116,6 @@ const WhatWeDo = () => (
         body="Dashboards, analytics and automation for supervisors, analysts and frontline teams."
         href="/capabilities#data"
         copyClassName="wwd-copy-card"
-        visualFirst
         visual={(
           <div aria-label="Operational data dashboard illustration" className="wwd-visual cap-feature-visual visual-data-system">
             <div className="data-kpi"><span>OPERATIONS</span><b>MONITORED</b></div>

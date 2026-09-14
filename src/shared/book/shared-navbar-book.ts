@@ -8,6 +8,5 @@ export const navbarContent = {
     { label: 'Capabilities', to: '/capabilities' },
     { label: 'Industries', to: '/industries' },
     { label: 'About', to: '/about' },
-    { label: 'Contact', to: '/contact' },
   ],
 }
