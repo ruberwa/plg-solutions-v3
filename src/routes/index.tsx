@@ -5,6 +5,8 @@ import Capabilities from '../modules/capabilities/pages/Capabilities'
 import Industries from '../modules/industries/pages/Industries'
 import About from '../modules/about/pages/About'
 import Contact from '../modules/contact/pages/Contact'
+import Privacy from '../modules/legal/pages/Privacy'
+import Terms from '../modules/legal/pages/Terms'
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,8 @@ const router = createBrowserRouter([
       { path: '/industries', element: <Industries /> },
       { path: '/about', element: <About /> },
       { path: '/contact', element: <Contact /> },
+      { path: '/privacy', element: <Privacy /> },
+      { path: '/terms', element: <Terms /> },
     ],
   },
 ])

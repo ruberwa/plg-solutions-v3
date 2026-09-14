@@ -22,27 +22,6 @@ export const landingContent = {
     hero: 'https://videos.pexels.com/video-files/3125427/3125427-uhd_3840_2160_25fps.mp4',
     infrastructure: 'https://videos.pexels.com/video-files/7140928/7140928-uhd_3840_2160_24fps.mp4',
   },
-  proof: {
-    eyebrow: 'Illustrative scale',
-    note: 'Placeholder metrics for the prototype — replace these with verified PLG Solutions figures before launch.',
-    stats: [
-      { value: 24, label: 'Delivery workstreams' },
-      { value: 12, label: 'Operating environments' },
-      { value: 60, label: 'Integration touchpoints' },
-      { value: 18, label: 'Solution modules' },
-    ],
-    partnersEyebrow: 'PLACEHOLDER ECOSYSTEM',
-    partnersNote: 'Fictional marks for layout preview only',
-    partners: [
-      { className: 'partner-northstar', mark: 'N', lines: ['Northstar', 'Systems'] },
-      { className: 'partner-atlas', mark: 'A', lines: ['Atlas', 'Infrastructure'] },
-      { className: 'partner-meridian', mark: 'M', lines: ['Meridian', 'Grid'] },
-      { className: 'partner-vector', mark: 'V', lines: ['Vector', 'Public'] },
-      { className: 'partner-cobalt', mark: 'C', lines: ['Cobalt', 'Labs'] },
-      { className: 'partner-harbor', mark: 'H', lines: ['Harbor', 'Networks'] },
-      { className: 'partner-terra', mark: 'T', lines: ['Terra', 'Works'] },
-    ],
-  },
   signals: [
     { index: '01', title: 'Strategy → System', body: 'Translate ambition into architecture.' },
     { index: '02', title: 'System → Operation', body: 'Integrate technology into reality.' },
@@ -52,7 +31,6 @@ export const landingContent = {
     eyebrow: 'What we do',
     title: 'Technology that works where it matters.',
     lede: 'We connect technical ambition with practical implementation — from system design and integration to deployment, resilience and long-term operation.',
-    cue: 'Scroll to move through each capability ↓',
     link: 'Explore capability',
   },
   connected: {

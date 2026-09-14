@@ -5,7 +5,7 @@ import { usePageMeta } from '../../../shared/hooks/usePlgEffects'
 import WhatWeDo from '../components/WhatWeDo'
 
 const Home = () => {
-  const { hero, proof, signals, connected, approach, cta, videos } = landingContent
+  const { hero, signals, connected, approach, cta, videos } = landingContent
   usePageMeta(landingContent.meta.title, landingContent.meta.description)
 
   return (
@@ -49,44 +49,6 @@ const Home = () => {
         <div className="container container-ultra hero-brandline hero-brandline-dark">
           <span>{hero.brandline}</span>
           <small>{hero.brandlineSmall}</small>
-        </div>
-      </section>
-
-      <section aria-label="PLG Solutions scale and partner ecosystem" className="home-proof">
-        <div className="container container-ultra home-proof-inner">
-          <div className="proof-stats-card">
-            <div className="proof-stats-heading">
-              <span className="eyebrow">{proof.eyebrow}</span>
-              <p>{proof.note}</p>
-            </div>
-            {proof.stats.map((stat) => (
-              <div className="proof-stat" key={stat.label}>
-                <strong><span data-count={stat.value}>{stat.value}</span>+</strong>
-                <span>{stat.label}</span>
-              </div>
-            ))}
-            <div aria-hidden="true" className="proof-map-mark"><i></i><i></i><i></i><i></i><i></i></div>
-          </div>
-          <div aria-label="Illustrative partner placeholders" className="partner-marquee">
-            <div className="partner-marquee-head">
-              <span>{proof.partnersEyebrow}</span>
-              <small>{proof.partnersNote}</small>
-            </div>
-            <div className="partner-marquee-viewport">
-              <div className="partner-marquee-track">
-                {[0, 1].map((set) => (
-                  <div className="partner-set" aria-hidden={set === 1 ? true : undefined} key={set}>
-                    {proof.partners.map((partner) => (
-                      <div className={`partner-logo ${partner.className}`} key={`${set}-${partner.mark}`}>
-                        <b>{partner.mark}</b>
-                        <span>{partner.lines[0]}<br />{partner.lines[1]}</span>
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 

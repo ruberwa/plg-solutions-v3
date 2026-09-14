@@ -1,8 +1,17 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { Link } from 'react-router-dom'
 import { contactContent } from '../book/contact-book'
 import { PageHero } from '../../../shared/components/SiteBlocks'
 import { usePageMeta } from '../../../shared/hooks/usePlgEffects'
+
+const encodeForm = (form: HTMLFormElement) => {
+  const params = new URLSearchParams()
+  new FormData(form).forEach((value, key) => {
+    if (typeof value === 'string') params.append(key, value)
+  })
+  return params.toString()
+}
 
 const Contact = () => {
   const { hero, info, form, meta } = contactContent
@@ -16,11 +25,11 @@ const Contact = () => {
     if (!formEl.reportValidity()) return
     setStatus('sending')
     try {
-      const body = new FormData(formEl)
+      if (import.meta.env.DEV) throw new Error('Netlify form is not available in local Vite')
       const response = await fetch(form.action, {
         method: 'POST',
-        body,
-        headers: { Accept: 'application/json' },
+        body: encodeForm(formEl),
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       })
       if (!response.ok) throw new Error('Submission failed')
       setStatus('success')
@@ -40,22 +49,50 @@ const Contact = () => {
             <h2>{info.title}</h2>
             <p>{info.lede}</p>
             <p>
+              <strong>{info.phoneLabel}</strong>
+              <br />
+              <a href={`tel:${info.phone}`}>{info.phoneDisplay}</a>
+            </p>
+            <p>
               <strong>{info.emailLabel}</strong>
               <br />
               <a href={`mailto:${info.email}`}>{info.email}</a>
             </p>
-            <p>
+            <div className="contact-locations">
               <strong>{info.locationLabel}</strong>
-              <br />
-              {info.address[0]}
-              <br />
-              {info.address[1]}
-              <br />
-              {info.address[2]}
-            </p>
+              <p>
+                {info.hq.label}
+                <br />
+                {info.hq.lines.map((line) => (
+                  <span key={line}>{line}</span>
+                ))}
+              </p>
+              {info.offices.map((office) => (
+                <p key={office.label}>
+                  {office.label}
+                  <br />
+                  {office.line}
+                </p>
+              ))}
+            </div>
           </div>
 
-          <form className="contact-form reveal" action={form.action} method="post" onSubmit={onSubmit}>
+          <form
+            className="contact-form reveal"
+            name={form.name}
+            action={form.action}
+            method="post"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            onSubmit={onSubmit}
+          >
+            <input type="hidden" name="form-name" value={form.name} />
+            <p className="netlify-honeypot" aria-hidden="true">
+              <label>
+                Don’t fill this field
+                <input name="bot-field" tabIndex={-1} autoComplete="off" />
+              </label>
+            </p>
             <div className="field-row">
               <div className="field">
                 <label htmlFor="name">Name</label>
@@ -95,8 +132,12 @@ const Contact = () => {
               <textarea id="message" name="message" required placeholder="Tell us about the challenge, environment or outcome you need." />
             </div>
             <label className="consent-row" htmlFor="consent">
-              <input id="consent" name="consent" type="checkbox" required />
-              <span>{form.consent}</span>
+              <input id="consent" name="consent" type="checkbox" value="yes" required />
+              <span>
+                {form.consentBefore}
+                <Link className="privacy-link" to="/privacy">{form.consentLink}</Link>
+                {form.consentAfter}
+              </span>
             </label>
             <button className="btn primary" type="submit" disabled={status === 'sending'}>
               {status === 'sending' ? form.sending : form.submit}

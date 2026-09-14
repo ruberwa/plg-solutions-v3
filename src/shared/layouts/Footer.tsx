@@ -24,9 +24,22 @@ const Footer = () => {
             <div>
               <h4>{footerContent.contactTitle}</h4>
               <div className="footer-links">
+                <a href={`tel:${footerContent.phone}`}>{footerContent.phoneDisplay}</a>
                 <a href={`mailto:${footerContent.email}`}>{footerContent.email}</a>
-                {footerContent.address.map((line) => (
+                <span>{footerContent.hq.label}</span>
+                {footerContent.hq.lines.map((line) => (
                   <span key={line}>{line}</span>
+                ))}
+                {footerContent.offices.map((office) => (
+                  <span key={office.label}>{office.label} — {office.line}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h4>{footerContent.legalTitle}</h4>
+              <div className="footer-links">
+                {footerContent.legalLinks.map((link) => (
+                  <Link key={link.to} to={link.to}>{link.label}</Link>
                 ))}
               </div>
             </div>

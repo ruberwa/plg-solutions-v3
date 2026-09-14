@@ -59,9 +59,6 @@ const WhatWeDo = () => (
         </div>
         <p>{landingContent.whatWeDo.lede}</p>
       </div>
-      <div className="container container-ultra">
-        <span className="cap-scroll-cue">{landingContent.whatWeDo.cue}</span>
-      </div>
     </section>
 
     <section aria-label="What we do" className="wwd-stack home-wwd-stack" data-wwd-stack="">
@@ -186,12 +183,13 @@ const WhatWeDo = () => (
         visual={(
           <div aria-label="Delivery roadmap illustration" className="wwd-visual cap-feature-visual visual-delivery">
             <div className="delivery-line"></div>
-            <div className="delivery-point p1"><b>01</b><span>DEFINE</span></div>
-            <div className="delivery-point p2"><b>02</b><span>BUILD</span></div>
-            <div className="delivery-point p3"><b>03</b><span>DEPLOY</span></div>
-            <div className="delivery-point p4"><b>04</b><span>OPERATE</span></div>
+            <div className="delivery-point p1"><b>01</b><span>STRUCTURE</span></div>
+            <div className="delivery-point p2"><b>02</b><span>DEFINE</span></div>
+            <div className="delivery-point p3"><b>03</b><span>BUILD</span></div>
+            <div className="delivery-point p4"><b>04</b><span>DEPLOY</span></div>
+            <div className="delivery-point p5"><b>05</b><span>OPERATE</span></div>
             <div className="delivery-runner"></div>
-            <span className="wwd-visual-caption">DEFINE / BUILD / DEPLOY / OPERATE</span>
+            <span className="wwd-visual-caption">STRUCTURE / DEFINE / BUILD / DEPLOY / OPERATE</span>
           </div>
         )}
       />

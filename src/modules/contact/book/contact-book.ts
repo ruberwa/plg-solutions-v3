@@ -1,3 +1,5 @@
+import { siteContact } from '../../../shared/book/shared-contact-book'
+
 export const contactContent = {
   meta: {
     title: 'Contact | PLG Solutions',
@@ -13,12 +15,17 @@ export const contactContent = {
     title: 'Send us an enquiry',
     lede: 'Tell us about your project, partnership or procurement enquiry.',
     emailLabel: 'Email',
-    email: 'hello@plgsolutions.com',
-    locationLabel: 'Location',
-    address: ['PLG Building, KN 3 Ave', 'Opposite Kigali Serena Hotel', 'Kigali, Rwanda'],
+    email: siteContact.email,
+    phoneLabel: 'Phone',
+    phone: siteContact.phone,
+    phoneDisplay: siteContact.phoneDisplay,
+    locationLabel: 'Locations',
+    hq: siteContact.hq,
+    offices: siteContact.offices,
   },
   form: {
-    action: '/api/contact',
+    name: 'contact',
+    action: '/',
     enquiryTypes: [
       'Project enquiry',
       'Partnership',
@@ -27,11 +34,13 @@ export const contactContent = {
       'Careers',
       'General enquiry',
     ],
-    consent: 'I consent to PLG Solutions storing and using these details to respond to my enquiry.',
+    consentBefore: 'I consent to PLG Solutions storing and using these details to respond to my enquiry. See our ',
+    consentLink: 'privacy notice',
+    consentAfter: '.',
     submit: 'Start a conversation',
     sending: 'Sending…',
     note: 'We respond to enquiries within two working days.',
     success: "Thank you. We've received your enquiry and will respond within two working days.",
-    error: "We couldn't send your enquiry. Please email hello@plgsolutions.com while the web form connection is being completed.",
+    error: `We couldn't send your enquiry. Please email ${siteContact.email}.`,
   },
 }
